@@ -12,6 +12,21 @@ burdonsome.
 The programs in this repo aim to make the upkeep of an organization's many repos
 and forks easy for their git Administrator.
 
+## Configuration File Format
+
+```ini
+[Repo 1 Title]
+url = <ssh url of upstream repository for Repo 1>
+
+[Repo 2 Title]
+url = <ssh url of upstream repository for Repo 2>
+```
+
+**NOTE 1:** The title for each repo will be displayed in the GUI Title
+
+**NOTE 2:** The url is the *common* upstream for all the clones in the
+directory
+
 ## Current Functionality
 
 1. Given a directory of cloned forks for a repository, allow easy
