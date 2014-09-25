@@ -428,7 +428,7 @@ class App(object):
             )
 
         # Check config file.
-        if self.args.config[0] == '/':
+        if self.args.config[0] in ['/', '.']:
             # We have an absolute page
             self.config_file = self.args.config
         else:
@@ -436,9 +436,8 @@ class App(object):
             self.config_file = '%s/%s' % (self.args.basedir, self.args.config)
 
         if not os.path.isfile(self.config_file):
-            raise ForkRebase(
-                'Config file %s does not exist\n' % self.config_file
-            )
+            print('Config file %s does not exist\n' % self.config_file)
+            self.quit(1)
 
     @classmethod
     def quit(cls, exitcode=0):
